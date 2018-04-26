@@ -7,7 +7,7 @@ import NewTweet from './NewTweet'
 
 class App extends Component {
   componentDidMount() {
-    this.props.dispatch(handleInitialData())
+    this.props.dispatch(handleInitialData())//We get access to dispatch through connect()
   }
   render() {
     return (
@@ -28,4 +28,4 @@ function mapStateToProps ({ authedUser }) {
 }
 
 
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps)(App)//this makes the component to a container

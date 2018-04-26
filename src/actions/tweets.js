@@ -1,10 +1,12 @@
 import { saveLikeToggle, saveTweet } from '../utils/api'
 import { showLoading, hideLoading } from 'react-redux-loading'
 
+//action types
 export const RECEIVE_TWEETS = 'RECEIVE_TWEETS'
 export const TOGGLE_TWEET = 'TOGGLE_TWEET'
 export const ADD_TWEET = 'ADD_TWEET'
 
+//This is an action creator. It returns an action object
 function addTweet (tweet) {
   return {
     type: ADD_TWEET,
@@ -44,6 +46,7 @@ function toggleTweet ({ id, authedUser, hasLiked }) {
   }
 }
 
+//async action creator with optimistic updates
 export function handleToggleTweet (info) {
   return (dispatch) => {
     dispatch(toggleTweet(info))
